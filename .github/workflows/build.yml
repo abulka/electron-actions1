@@ -10,7 +10,8 @@ jobs:
       matrix:
         # os: [macos-latest, ubuntu-latest, windows-latest]
         # os: [macos-latest]
-        os: [windows-latest]
+        # os: [windows-latest]
+        os: [ubuntu-latest]
 
     steps:
       - name: Andy experiments
