@@ -1,8 +1,7 @@
 name: Build/release
 
 on: push
-  branches-ignore:
-    - main
+  branches-ignore: main
 
 jobs:
   release:
