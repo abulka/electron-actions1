@@ -37,6 +37,12 @@ jobs:
       with:
         node-version: 10
 
-    - name: Electron Forge attempt by Andy
-      run: npm run package
+    - name: Install npm stuff?  by Andy
+      run: |
+        echo hello
+        npm install
 
+    - name: Electron Forge attempt by Andy
+      run: |
+        echo there
+        npm run package
