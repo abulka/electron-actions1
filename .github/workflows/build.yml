@@ -22,10 +22,12 @@ jobs:
           node-version: 10
 
       - name: Andy experiments
-          run: ls -l
-          run: pwd
-          run: node --version
-          run: echo "that is all for now Andy"
+          id: andy_step1
+          run: |
+            ls -l
+            pwd
+            node --version
+            echo "that is all for now Andy"
 
       - name: Build/release Electron app
         # uses: samuelmeuli/action-electron-builder@v1
