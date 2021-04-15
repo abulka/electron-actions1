@@ -1,6 +1,8 @@
 name: Build/release
 
 on: push
+  branches-ignore:
+    - main
 
 jobs:
   release:
@@ -21,8 +23,15 @@ jobs:
         with:
           node-version: 10
 
+      - name: Andy experiments
+        run: ls -l
+        run: pwd
+        run: node --version
+        run: echo "that is all for now Andy"
+
       - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
+        # uses: samuelmeuli/action-electron-builder@v1
+        uses: wixplosives/action-electron-builder@v1
         with:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
