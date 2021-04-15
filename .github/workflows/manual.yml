@@ -28,3 +28,15 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
+
+    - name: Check out Git repository
+      uses: actions/checkout@v1
+
+    - name: Install Node.js, NPM and Yarn
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+
+    - name: Electron Forge attempt by Andy
+      run: npm run package
+
