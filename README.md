@@ -10,3 +10,4 @@ to
     "build": "electron-builder --linux",
     "release": "electron-builder --linux --publish always"
 
+test
