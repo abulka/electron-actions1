@@ -13,6 +13,15 @@ jobs:
         os: [windows-latest]
 
     steps:
+      - name: Andy experiments
+        id: stpppppp
+        run: |
+          echo hello
+          ls -l
+          pwd
+          node --version
+          echo "that is all for now Andy"
+          
       - name: Check out Git repository
         uses: actions/checkout@v1
 
@@ -20,14 +29,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
-
-      - name: Andy experiments
-          id: andy_step1
-          run: |
-            ls -l
-            pwd
-            node --version
-            echo "that is all for now Andy"
 
       - name: Build/release Electron app
         # uses: samuelmeuli/action-electron-builder@v1
