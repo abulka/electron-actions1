@@ -35,7 +35,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Display Python version
-        run: python -c "import sys; print(sys.version)" >> result.txt
+        run: python -c "import sys; print(sys.version)" > result.txt
+      - name: Run a fun Python script
+        run: python fun1.py >> result.txt
       - name: Archive result of calling version
         uses: actions/upload-artifact@v2
         with:
