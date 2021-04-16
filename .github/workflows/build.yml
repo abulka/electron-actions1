@@ -54,13 +54,16 @@ jobs:
         run: |
           echo there
           npm run package
+          ls ./out
+          tree ./out/
 
       - name: Release by Andy
         uses: softprops/action-gh-release@v1
         # must have this 'if' because releasing only works for tag pushes
         # if: startsWith(github.ref, 'refs/tags/')
+        # ./out/electron-actions1-darwin-x64/electron-actions1.app
         with:
           files: |
-            out/electron-actions1-darwin-x64/electron-actions1.app
+            ./out/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

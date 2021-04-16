@@ -1,7 +1,7 @@
 {
   "name": "electron-actions1",
   "productName": "electron-actions1",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {

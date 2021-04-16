@@ -4,8 +4,8 @@ name: python matrix os workflow
 
 on:
   push:
-    tags:
-      - '*'
+    # tags:
+    #   - '*'
     branches-ignore:  # disable
       - '**'
 
