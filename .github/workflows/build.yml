@@ -50,3 +50,5 @@ jobs:
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
+          publish_cmd: "electron-builder"
+

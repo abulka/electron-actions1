@@ -1,10 +1,12 @@
-name: Build/release
+name: Build/release experiment with forge
 
 on:
   push:
     tags:
-    - '*'
-        
+      - '*'
+    branches-ignore:  # disable
+      - '**'
+
 jobs:
   release:
     runs-on: ${{ matrix.os }}
