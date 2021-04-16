@@ -28,3 +28,4 @@ To see runs for this workflow, try: gh run list --workflow=manual-python-matrix.
     ✓  Update manual-python-matrix.yml  Manual python matrix os workflow  main  workflow_dispatch  752246735
     ✓  Create manual-python-matrix.yml  Manual workflow                   main  workflow_dispatch  752226522
 
+test
