@@ -1,11 +1,11 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual python matrix os workflow
+name: Auto python matrix os workflow
+on: push
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
-on:
-  workflow_dispatch: null
+# name: Manual python matrix os workflow
+# on:
+#   workflow_dispatch: null
 #     # Inputs the workflow accepts.
 #     inputs:
 #       name:
@@ -47,7 +47,8 @@ jobs:
           path: result.txt
       - name: Release
         uses: softprops/action-gh-release@v1
-        # if: startsWith(github.ref, 'refs/tags/')
+        # must have this 'if' because releasing only works for tag pushes
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: result.txt
         env:
