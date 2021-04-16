@@ -1,11 +1,12 @@
 # This is a basic workflow that is manually triggered
 
+name: python matrix os workflow
+
 on:
   push:
     tags:
     - '*'
 
-# name: Auto python matrix os workflow
 # on: push
 
 # name: Manual python matrix os workflow
