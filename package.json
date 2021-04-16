@@ -1,7 +1,7 @@
 {
   "name": "electron-actions1",
   "productName": "electron-actions1",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -11,8 +11,8 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "postinstall": "electron-builder install-app-deps",
-		"build": "electron-builder --linux",
-		"release": "electron-builder --linux --publish always"
+    "build": "electron-builder --mac --windows --linux",
+    "release": "electron-builder --mac --windows --linux --publish always"
   },
   "build": {
 		"appId": "com.yourcompany.yourapp",
