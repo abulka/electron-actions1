@@ -1,6 +1,11 @@
 name: softy1
 
-on: push
+# on: push
+
+on: 
+  push:
+    branches-ignore:  # disable
+    - '**'
 
 jobs:
   build:
