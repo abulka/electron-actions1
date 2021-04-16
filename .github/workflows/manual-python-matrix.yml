@@ -45,7 +45,7 @@ jobs:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)" > result.txt
       - name: Run a fun Python script
-        run: python fun1.py >> result.txt
+        run: python fun1.py > result-py-${{ matrix.os }}-${{ matrix.python-version }}.txt
       - name: Archive result of calling version
         uses: actions/upload-artifact@v2
         with:
@@ -56,6 +56,8 @@ jobs:
         # must have this 'if' because releasing only works for tag pushes
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: result.txt
+          files: |
+            result.txt
+            result-py-${{ matrix.os }}-${{ matrix.python-version }}.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
