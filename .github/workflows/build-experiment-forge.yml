@@ -1,0 +1,69 @@
+name: Build/release
+
+on:
+  push:
+    tags:
+    - '*'
+        
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        # os: [macos-latest, ubuntu-latest, windows-latest]
+        # os: [macos-latest]
+        # os: [windows-latest]
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Andy experiments
+        run: |
+          echo hello
+          ls
+          pwd
+          node --version
+          echo "that is all for now Andy"
+
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      # - name: Build/release Electron app
+      #   # uses: samuelmeuli/action-electron-builder@v1
+      #   uses: wixplosives/action-electron-builder@v1
+      #   with:
+      #     # GitHub token, automatically provided to the action
+      #     # (No need to define this secret in the repo settings)
+      #     github_token: ${{ secrets.github_token }}
+
+      #     # If the commit is tagged with a version (e.g. "v1.0.0"),
+      #     # release the app after building
+      #     release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Install npm stuff by Andy
+        run: |
+          echo hello
+          npm install
+
+      - name: Electron Forge attempt by Andy
+        run: |
+          echo there
+          npm run package
+          ls ./out
+          tree ./out/
+
+      - name: Release by Andy
+        uses: softprops/action-gh-release@v1
+        # must have this 'if' because releasing only works for tag pushes
+        # if: startsWith(github.ref, 'refs/tags/')
+        # ./out/electron-actions1-darwin-x64/electron-actions1.app
+        with:
+          files: |
+            ./out/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

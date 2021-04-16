@@ -33,37 +33,20 @@ jobs:
         with:
           node-version: 10
 
-      # - name: Build/release Electron app
-      #   # uses: samuelmeuli/action-electron-builder@v1
-      #   uses: wixplosives/action-electron-builder@v1
-      #   with:
-      #     # GitHub token, automatically provided to the action
-      #     # (No need to define this secret in the repo settings)
-      #     github_token: ${{ secrets.github_token }}
-
-      #     # If the commit is tagged with a version (e.g. "v1.0.0"),
-      #     # release the app after building
-      #     release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
       - name: Install npm stuff by Andy
         run: |
           echo hello
           npm install
 
-      - name: Electron Forge attempt by Andy
-        run: |
-          echo there
-          npm run package
-          ls ./out
-          tree ./out/
-
-      - name: Release by Andy
-        uses: softprops/action-gh-release@v1
-        # must have this 'if' because releasing only works for tag pushes
-        # if: startsWith(github.ref, 'refs/tags/')
-        # ./out/electron-actions1-darwin-x64/electron-actions1.app
+      - name: Build/release Electron app
+        # uses: samuelmeuli/action-electron-builder@v1
+        uses: wixplosives/action-electron-builder@v1
         with:
-          files: |
-            ./out/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GitHub token, automatically provided to the action
+          # (No need to define this secret in the repo settings)
+          github_token: ${{ secrets.github_token }}
+
+          # If the commit is tagged with a version (e.g. "v1.0.0"),
+          # release the app after building
+          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+
