@@ -78,7 +78,8 @@
           "config": {
             "repository": {
               "owner": "abulka",
-              "name": "electron-actions1"
+              "name": "electron-actions1",
+              "draft": false
             }
           }
         }
