@@ -22,6 +22,13 @@ on:
 
 This works.
 
+Most makers are official `@electron-forge/...` but the [Appimage](https://www.npmjs.com/package/electron-forge-maker-appimage) plugin is not, its third party `electron-forge-maker-appimage`.
+ACTUALLY THAT'S BROKEN
+Use https://github.com/saleae/electron-forge-maker-appimage
+instead.
+
+
+
 # Electron Builder Approach
 
 A little bit more flaky and relies on a 3rd party github 'uses' action script.
