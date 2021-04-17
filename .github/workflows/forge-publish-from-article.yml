@@ -1,9 +1,15 @@
 name: Forge Release from article
-on:
-  release:
-    types:
-      - created
 
+# on:
+#   release:
+#     types:
+#       - created
+
+on:
+  push:
+    tags:
+    - '*'
+    
 jobs:
 
   publish_on_linux:
