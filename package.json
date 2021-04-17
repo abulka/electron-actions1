@@ -1,7 +1,7 @@
 {
   "name": "electron-actions1",
   "productName": "electron-actions1",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -15,19 +15,21 @@
     "release": "electron-builder --mac --windows --linux --publish always"
   },
   "build": {
-		"appId": "com.yourcompany.yourapp",
-		"productName": "Your App",
-		"mac": {
-			"category": "public.app-category.lifestyle"
-		},
-		"dmg": {
-			"icon": false
-		},
-		"linux": {
-			"target": ["AppImage"],
-			"category": "Office"
-		}
-	},
+    "appId": "com.yourcompany.yourapp",
+    "productName": "Your App",
+    "mac": {
+      "category": "public.app-category.lifestyle"
+    },
+    "dmg": {
+      "icon": false
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office"
+    }
+  },
   "keywords": [],
   "author": {
     "name": "Andy Bulka",
@@ -58,6 +60,17 @@
           "name": "@electron-forge/maker-rpm",
           "config": {}
         }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "abulka",
+              "name": "electron-publish-example-from-article"
+            }
+          }
+        }
       ]
     }
   },
@@ -70,6 +83,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "electron": "12.0.4",
     "electron-builder": "^22.10.5"
   }
