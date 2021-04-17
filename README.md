@@ -22,11 +22,64 @@ on:
 
 This works.
 
+## The publishers
+
+All you do is call `npm publish` in the Github `yml` workflow file. This calls the official github publisher as long as you have this in package.json
+
+```json
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "abulka",
+              "name": "electron-actions1"
+            }
+          }
+        }
+      ]
+```
+
+Ensure you have your Github username and repo name in the config, as `owner` and `name`.
+
+You can add additional publishers, like copying files to s3 etc.  All publishers listed in your `package.json` are run when you type `npm run publish` (which incidentally just is shorthand for `electron-forge publish`)
+
+## The makers
+
+Makers are the `exe` types e.g. `.deb`, `snap` etc that you want to make. Just list the makers in `package.json` - each one has a config entry where you can say which os to be active for. All makers you list are run, if the os matches - though sometimes the plugin itself knows which os to run on and which not to run on.
+
+Ensure you install each maker plugin using npm install.  E.g.
+```json
+  "devDependencies": {
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-dmg": "*",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+
+    "electron-forge-maker-appimage": "github:Marcus10110/electron-forge-maker-appimage"
+
+    etc.
+```
+
 Most makers are official `@electron-forge/...` but the [Appimage](https://www.npmjs.com/package/electron-forge-maker-appimage) plugin is not, its third party `electron-forge-maker-appimage`.
 ACTUALLY THAT'S BROKEN
 Use https://github.com/saleae/electron-forge-maker-appimage
 instead.
 
+## results
+
+    v1.0.32
+    @github-actions github-actions drafted this 5 minutes ago
+    Assets 8
+
+    electron-actions1-1.0.32-1.x86_64.rpm
+    electron-actions1-1.0.32.AppImage
+    electron-actions1-1.0.32.dmg
+    electron-actions1-1.0.32.Setup.exe
+    electron-actions1-darwin-x64-1.0.32.zip
+    electron-actions1_1.0.32_amd64.deb
+    electron_actions1-1.0.32-full.nupkg
 
 
 # Electron Builder Approach
