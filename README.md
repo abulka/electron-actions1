@@ -1,43 +1,49 @@
 # Electron builds via GitHub actions
 
-## Quick increment of version number and push
+I use the `Electron Forge` approach rather than the `Electron Builder` approach.
 
-    npm version patch
-    git push --follow-tags
+To build a quick electron app using electron forge:
 
-## Stopping two build jobs being triggered
-
-When you do a push followed by push tags, this results in two pushes, which can result in two github actions build jobs being triggered.  
-
-Avoid this by using the modern one push `git push --follow-tags` or by defining the `yml` as
-
-```yml
-on:
-  push:
-    tags:
-    - 'v*'
-```
+    npx create-electron-app my-app
+    cd my-app
+    npm start
+    npm run make
 
 # Electron Forge Approach
 
-This works.
+This works. 
+
+You must understand that a 'maker' creates the exe or dmg.
+
+The publisher takes the exe and tries to publish it into a release on github, or as a s3 file on aws.
+
+The scripts which trigger forge behaviour are `start`, `package`, `make` and `publish`. Make creates the exe's in `out/` dir and publish tries to upload them to GitHub (you can have a list of publisher plugins). A plugin is just a npm installed library, which is listed in `package.json` plus a config entry inside `config.forge` of `package.json`.
+
+To hook up with GitHub releases, all you need is a single entry in `package.json` which is the `"@electron-forge/publisher-github"` entry, which has your repo info in its options. Then you tag (or just do `npm version patch`) and run `npm run publish` locally. This will create a release! But only for the current operating system. It will also try and contact Github to upload those files into a release.
+
+To hook up with GitHub actions (which runs workflow scripts specified in `yml` syntax on OS's of your choice), you just need to add a `yml` workflow file into `.github/workflows/` which, for each OS, checks out the code, installs nodejs, runs `npm init`, and runs `npm run publish` in an OS vm. This will create a release for all OS's. Cool.
+
+You specify the exe types you want by listing them in the `config.forge.makers` array of `package.json`. Some of them know which OS they apply to, others you specify if you want that maker to be run on that OS (e.g. zip). For each OS on Github actions, all the makers are attempted to run - but only a few actually run because of the OS.  The `Exe/DMG/Zip` etc are generated and appended to the release for that tag.
+
+More detail:
 
 ## The publishers
 
-All you do is call `npm publish` in the Github `yml` workflow file. This calls the official github publisher as long as you have this in package.json
+All you do is call `npm run publish` in the Github `yml` workflow file. This calls the official github publisher as long as you have this in package.json
 
 ```json
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "abulka",
-              "name": "electron-actions1"
-            }
-          }
-        }
-      ]
+"publishers": [
+{
+    "name": "@electron-forge/publisher-github",
+    "config": {
+    "repository": {
+        "owner": "abulka",
+        "name": "electron-actions1"
+    }
+    }
+},
+...
+]
 ```
 
 Ensure you have your Github username and repo name in the config, as `owner` and `name`.
@@ -49,10 +55,10 @@ If you run `npm run publish` locally e.g. on a Mac it will build the zip, dmg et
 When running inside a GitHub workflow `yml` file (inside GitHub actions tab of GitHub) then the same behaviour will happen - exes are built and copied into a release for the current tag. The access to Github is done via your GitHub access token via
 
 ```yml
-    - name: publish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run publish
+- name: publish
+    env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    run: npm run publish
 ```
 
 
@@ -61,29 +67,29 @@ When running inside a GitHub workflow `yml` file (inside GitHub actions tab of G
 Makers are the `exe` types e.g. `.deb`, `snap` etc that you want to make. Just list the makers in `package.json` - each one has a config entry where you can say which os to be active for, as well as possible other minor config settings (like in the case of a DMG you can specify the particular DMG format). 
 
 ```json
-  "config": {
-    "forge": {
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "electron_actions1"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        ...
+"config": {
+"forge": {
+    "makers": [
+    {
+        "name": "@electron-forge/maker-squirrel",
+        "config": {
+        "name": "electron_actions1"
+        }
+    },
+    {
+        "name": "@electron-forge/maker-zip",
+        "platforms": [
+        "darwin"
+        ]
+    },
+    ...
 ```
 
 All makers you list are run, if the OS matches - though sometimes the plugin itself knows which OS to run on and which OS not to run on.
 
 Ensure you install each maker plugin using npm install.  E.g.
 ```json
-  "devDependencies": {
+"devDependencies": {
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
     "@electron-forge/maker-dmg": "*",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
@@ -116,6 +122,8 @@ instead.
 
 
 # Electron Builder Approach
+
+> I got this partially working, but abandoned it when I got the forge approach working.
 
 A little bit more flaky and relies on a 3rd party github 'uses' script:
 
@@ -162,7 +170,48 @@ env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-# CLI
+# Tips
+
+## Quick increment of version number and push
+
+    npm version patch
+    git push --follow-tags
+
+## Stopping two build jobs being triggered
+
+When you do a push followed by push tags, this results in two pushes, which can result in two github actions build jobs being triggered.  
+
+Avoid this by using the modern one push `git push --follow-tags` or by defining the `yml` as
+
+```yml
+on:
+  push:
+    tags:
+    - 'v*'
+```
+
+## Artifacts
+
+Note GitHub actions used for testing and mucking around can generate files in the OS vm, e.g. if you ran `npm run make` or some test script with logging, for example. These files are discared after the run unless you specifically save them into the 'run' using `actions/upload-artifact@v2` e.g.
+
+```yml
+- name: Run a fun Python script
+run: python fun1.py > result-py-${{ matrix.os }}-${{ matrix.python-version }}.txt
+
+- name: Archive result of calling version
+uses: actions/upload-artifact@v2
+with:
+    name: result-${{ matrix.os }}-${{ matrix.python-version }}
+    path: result.txt
+```
+
+This will make those 'artifact' files available in the github action workflow run, kind of like attachments.
+
+You can also feed artifacts from one job into another job using the 'upload' and 'download' artifact. The upload saves it and the download restores it into the file system for the current job to use. See the Github actions doco for more info.
+
+# GitHub CLI
+
+Install with brew. Then you can run workflows from your devel machine etc.
 
     $ gh workflow run "Manual python matrix os workflow"
 
