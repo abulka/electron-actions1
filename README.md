@@ -84,8 +84,50 @@ instead.
 
 # Electron Builder Approach
 
-A little bit more flaky and relies on a 3rd party github 'uses' action script.
+A little bit more flaky and relies on a 3rd party github 'uses' script:
 
+    uses: samuelmeuli/action-electron-builder@v1
+    # uses: wixplosives/action-electron-builder@v1
+
+A 'uses' script is javascript. You can run your own uses script via specifying a path something like `./github/workflow/uses/test.js` (untried), or use scripts from the marketplace.  The `wixplosives` is just a version of `samuelmeuli` with a minor change, to allow specifying a build command as an input parameter.
+
+The `electron builder` vs `electron forge` parts of `package.json` are
+
+```json
+  "scripts": {
+    // ELECTRON FORGE SCRIPTS
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+
+    // ELECTRON BUILDER SCRIPTS
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --mac --windows --linux",
+    "release": "electron-builder --mac --windows --linux --publish always"
+```
+
+Thus `npm run make` will run the electron forge maker (which generates exes for all os platforms we are on) into `out/`, 
+
+whereas `npm run build` runs electron builder exe maker into `dist/`
+
+Similarly for publishing, which is the act of creating the final installer for an os, and optionally publishing it on some server (in the case of forge with a github publish plugin specified in package.json). If you run `npm run publish` locally e.g. on a Mac it will build the zip, dmg etc then will try to publish to a GitHub release, you will need to have set your `GITHUB_TOKEN`.
+
+# Manual Approach
+
+Just run `npm run ....` whatever you want, and the output will be in `out` (forge) or `dist` (builder) but these need to be copied into a release. Use the 3rd party `uses: softprops/action-gh-release@v1` action to do this as long as you know the filenames involved e.g.
+
+```yml
+uses: softprops/action-gh-release@v1
+# must have this 'if' because releasing only works for tag pushes
+if: startsWith(github.ref, 'refs/tags/')
+with:
+    files: |
+    result.txt
+    result-py-${{ matrix.os }}-${{ matrix.python-version }}.txt
+env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 # CLI
 
