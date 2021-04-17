@@ -44,9 +44,42 @@ Ensure you have your Github username and repo name in the config, as `owner` and
 
 You can add additional publishers, like copying files to s3 etc.  All publishers listed in your `package.json` are run when you type `npm run publish` (which incidentally just is shorthand for `electron-forge publish`)
 
+If you run `npm run publish` locally e.g. on a Mac it will build the zip, dmg etc then will try to publish to a GitHub release, you will need to have set your `GITHUB_TOKEN` in order for to access your GitHub repo.
+
+When running inside a GitHub workflow `yml` file (inside GitHub actions tab of GitHub) then the same behaviour will happen - exes are built and copied into a release for the current tag. The access to Github is done via your GitHub access token via
+
+```yml
+    - name: publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npm run publish
+```
+
+
 ## The makers
 
-Makers are the `exe` types e.g. `.deb`, `snap` etc that you want to make. Just list the makers in `package.json` - each one has a config entry where you can say which os to be active for. All makers you list are run, if the os matches - though sometimes the plugin itself knows which os to run on and which not to run on.
+Makers are the `exe` types e.g. `.deb`, `snap` etc that you want to make. Just list the makers in `package.json` - each one has a config entry where you can say which os to be active for, as well as possible other minor config settings (like in the case of a DMG you can specify the particular DMG format). 
+
+```json
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_actions1"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        ...
+```
+
+All makers you list are run, if the OS matches - though sometimes the plugin itself knows which OS to run on and which OS not to run on.
 
 Ensure you install each maker plugin using npm install.  E.g.
 ```json
@@ -111,7 +144,7 @@ Thus `npm run make` will run the electron forge maker (which generates exes for 
 
 whereas `npm run build` runs electron builder exe maker into `dist/`
 
-Similarly for publishing, which is the act of creating the final installer for an os, and optionally publishing it on some server (in the case of forge with a github publish plugin specified in package.json). If you run `npm run publish` locally e.g. on a Mac it will build the zip, dmg etc then will try to publish to a GitHub release, you will need to have set your `GITHUB_TOKEN`.
+Similarly for publishing, which is the act of creating the final installer for an os, and optionally publishing it on some server (in the case of forge with a github publish plugin specified in package.json). 
 
 # Manual Approach
 
