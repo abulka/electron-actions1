@@ -1,5 +1,7 @@
 name: Forge Release from article
 
+# THIS WORK PERFECTLY
+
 # on:
 #   release:
 #     types:
