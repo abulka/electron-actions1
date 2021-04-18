@@ -1,5 +1,8 @@
 # Electron builds via GitHub actions
 
+You cannot build for all platforms on your local dev machine, you need to run under multiple OS's, which is what github actions allows you to do.
+
+
 I use the `Electron Forge` approach rather than the `Electron Builder` approach.
 
 To build a quick electron app using electron forge:
