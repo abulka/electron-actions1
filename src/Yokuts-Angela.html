@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export  -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+
+    <title>Yokuts-Angela (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/meta.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/pages/Yokuts-Angela.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/pages/Yokuts-Angela.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+
+<!-- page HEAD stuff here -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="i043xxxx">Insert your text here IMMMMMMMMM xxxxxx</div><div id="ibw8"></div><div id="ixd4"></div><div id="i8xj"></div><a id="ic11" href="McAdams-Forsythe?project=project1">navigate HA back to McAdams-Forsythe</a><div id="i043xxxx-2">Insert your text here IMMMMMMMMM</div><script>var items = document.querySelectorAll('#ibw8, #ixd4, #i8xj');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+this.innerHTML = '<p class="no-top-margin-andy">hello <b>this</b> is some inner content<p>';
+      this.onclick = function() {
+        console.log("red box - RUNTIME <---***** and DESIGN time click!");
+      };
+}.bind(items[i]))();
+          }
+          var props = {"ic11":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#ibw8{width:532px;height:100px;background:red;margin-left:5px;}#i8xj{width:532px;height:100px;background:red;margin-left:5px;}#ixd4{width:532px;height:100px;background:red;margin-left:5px;}#ic11{font-size:25px;color:#2b63d6;padding:11px 0 0 0;margin:9px 0 0 0;height:54auto;width:32auto;}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>
