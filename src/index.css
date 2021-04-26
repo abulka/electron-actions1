@@ -1,0 +1,20 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  /* andy  */
+  /* background-color: antiquewhite; */
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background:  #333; color: white; }
+  a {
+    /* fix issue with dark blue unreadable links in dark mode */
+    color: cadetblue;
+  }  
+}
+
+@media (prefers-color-scheme: light) {
+  body { background:  antiquewhite; color: black; }
+}

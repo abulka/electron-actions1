@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export  -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+
+    <title>McAdams-Forsythe (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/meta.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/pages/McAdams-Forsythe.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/project1/pages/McAdams-Forsythe.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+
+<!-- page HEAD stuff here -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <button id="irk1">Add your text here...</button><div id="ioni">Insert your text here</div><button id="iqkj">Add your text here...</button><div id="i7p5">Insert your user scriptable text <b>here</b></div><a id="irsoo" href="">no href specified ok<br/></a><a href="fred?project=project1" id="i0bkk">navigate to fred<br/><br/></a><a href="Yokuts-Angela?project=project1" id="ixxdo" hrefPage="">navigate to Yokuts-Angela<br/><br/></a><a href="http://google.com" target="_blank" id="iwazc">Link to <b>google</b> website in another window using http://google.com - OK<br/></a><div id="iktou"></div><a href="www.google.com" target="_blank" id="irpbw">Link to <b>google</b> website in another window using www.google.com - fails, goes to originating server. <a draggable="false" href="http://127.0.0.1:5000/page/www.google.com" target="_blank" id="i148k-2"></a></a><div id="i0stt"></div><a href="/www.google.com" target="_blank" id="i148k">Link to <b>google</b> website in another window using /www.google.com - fails, goes to originating server.</a><div id="ioh7y"></div><a href="//www.google.com" target="_blank" id="i9crj">Link to <b>google</b> website in another window using //www.google.com - which is protocol relative syntax, OK</a><div id="iwsje"></div><div id="io8hv"><div>Interesting info on urls without http on <a href="https://stackoverflow.com/questions/9161769/url-without-httphttps" target="_blank" class="link">stackoverflow</a>.</div>Insert <a href="" id="isk19" class="link">your</a> text here. Actually this link goes nowhere.</div><div id="i043xxxx">Insert your text here IMMMMMMMMM</div><div data-html-code2="" id="isych">Edit my HTML content (yes you can double click)</div><div data-html-code2="" id="im7yk">Edit my HTML content (yes you can double click)
+
+<p>
+    hi <b>there</b></p><a id="ix9vb" href="http://google.com" target="_blank">Link to google website in another window using http://google.com</a><h1 id="i1p8t">interesting heading here</h1><ul><li>one</li><li>two</li><li>three is the charm</li></ul><hr/><p>another <b>bit of bolding</b> is here.</p></div><a href="McAdams-Forsythe?project=project1" title="this is the title of the link" hrefPageProto="some page within a project" hrefPage="McAdams-Forsythe?project=project1" class="cls cls2">my enhancedlink to somewhere</a><script>var props = {"irk1":{"myprop1":"value1","myprop2":"10","userscript":"//console.log('HI ANDY in userScriptContext', this, props)\nconsole.log('button user script line 1 says hix')\n\nfunction run(e) {\n    console.log('RUN mode button', e, this, e.target == this)\n}\nfunction design(e) {\n    console.log('design mode button')\n}\n\n// this.addEventListener('run', function(e) {\n//     console.log('run detected via listener', e)\n// })\n\nfunction two() {}\n\nthis.addEventListener('click', function(e) {\n    console.log('ANDY22 clicked', e)\n})\n\n// if (props['myprop2'] == 10) {\n//     return 'hello 10'\n// } else {\n//     return 'world'\n// }","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('run', run) } catch (ReferenceError) { }\ntry { _el.addEventListener('design', design) } catch (ReferenceError) { }\ntry { _el.addEventListener('two', two) } catch (ReferenceError) { }\n\n","jqui_label":"Click this button","jqui_showLabel":true,"jqui_icon":"ui-icon-gear","jqui_iconPosition":"beginning","jqui_disabled":false},"iqkj":{"myprop1":"value1","myprop2":"10","userscript":"/* Enter your component userscript here.\n - 'this' refers to the component DOM element\n - 'props' is also available e.g. props['jqui_iconPosition']\n - To refer to another element by id\n   - using jQuery:       $(\"#i2vv\")\n   - plain javascript:   document.getElementById(\"i2vv\")\n - To call page script function 'f1' use 'window.f1()'\n - To refer to page script variable 'x' use 'window.x'\n*/\nfunction click() {\n    alert('hi andy')\n}","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('click', click) } catch (ReferenceError) { }\n\n","jqui_label":"show an alert","jqui_showLabel":true,"jqui_icon":"ui-icon-note","jqui_iconPosition":"beginning","jqui_disabled":false}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        $(this).button({
+          classes: {
+            "ui-button": "highlight"
+          },
+          label: props["jqui_label"],
+          showLabel: props["jqui_showLabel"],
+          icon: props["jqui_icon"],
+          iconPosition: props["jqui_iconPosition"],
+          disabled: props["jqui_disabled"]
+        });
+        if (document.getElementById("wrapper")) {
+          $(this).eventPause();
+        }
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }
+          var props = {"i7p5":{"userscript":"function run(e) {\n    console.log('RUN mode text')\n}\nfunction design(e) {\n    console.log('design mode text')\n}\n\nfunction mousemove(e) {\n    console.log('text area', e.target.tagName, e.target.id)\n}\n","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('run', run) } catch (ReferenceError) { }\ntry { _el.addEventListener('design', design) } catch (ReferenceError) { }\ntry { _el.addEventListener('mousemove', mousemove) } catch (ReferenceError) { }\n\n"}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function () {
+                ${props["userscript"]}
+                ${props["userscriptHelpers"]}
+            }).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }
+          var props = {"irsoo":{"userscript":"// enter your user script,\n// Note: 'this' refers to the component, 'props' is also available\nfunction click(e) {\n    console.log('link was clicked')\n    // e.stopPropagation()\n    e.preventDefault()\n}","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('click', click) } catch (ReferenceError) { }\n\n"},"i0bkk":{"userscript":"// enter your user script,\n// Note: 'this' refers to the component, 'props' is also available\nfunction click(e) {\n    console.log('link was clicked')\n    // e.stopPropagation()\n    //e.preventDefault()\n}","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('click', click) } catch (ReferenceError) { }\n\n"},"ixxdo":{"userscript":"// enter your user script,\n// Note: 'this' refers to the component, 'props' is also available\nfunction click(e) {\n    console.log('link was clicked')\n    // e.stopPropagation()\n    //e.preventDefault()\n}","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('click', click) } catch (ReferenceError) { }\n\n"},"iwazc":{"userscript":"","userscriptHelpers":""},"irpbw":{"userscript":"","userscriptHelpers":""},"i148k-2":{"userscript":"","userscriptHelpers":""},"i148k":{"userscript":"","userscriptHelpers":""},"i9crj":{"userscript":"","userscriptHelpers":""},"ix9vb":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function () {
+                ${props["userscript"]}
+                ${props["userscriptHelpers"]}
+            }).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#ioni{padding:10px;}#i7p5{padding:10px;}#irsoo{font-size:large;font-family:Comic Sans MS, cursive, sans-serif;color:#1371b6;}#i0bkk{font-size:large;font-family:Comic Sans MS, cursive, sans-serif;color:#1371b6;}#io8hv{padding:10px;}#ixxdo{font-size:large;font-family:Comic Sans MS, cursive, sans-serif;color:#1371b6;}#ix9vb{color:#d983a6;}#iwazc{color:#d983a6;}#irpbw{color:#d983a6;}#i0stt{padding:10px;}#iktou{padding:10px;}#iwsje{padding:10px;}#i9crj{color:#d983a6;}#ioh7y{padding:10px;}#i148k{color:#d983a6;}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>
