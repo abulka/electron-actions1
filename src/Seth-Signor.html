@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export  -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+
+    <title>Seth-Signor (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/meta.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/pages/Seth-Signor.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/pages/Seth-Signor.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+
+<!-- page HEAD stuff here -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="i043xxxx">Insert your text here IMMMMMMMMM</div><div id="irfb">Insert your text here</div><a id="ihxg" href="fred">navigate to... fred</a><div id="imcl" class="gjs-row"><div id="i6wb" class="gjs-cell"><div id="i6s6d">Insert your user scriptable text here</div></div><div id="id4n" class="gjs-cell"><div id="i5boq">Insert your user scriptable text here</div></div></div><div id="ilz2f"></div><button id="ifwy1">Add your text here...</button><div id="i1fr2" class="gjs-row"><div class="gjs-cell"><div id="injqx">Insert your user scriptable text here</div><div id="iyhkp">Insert your user scriptable text here</div><div id="iz9ba">Insert your user scriptable text here</div><div id="izeu8">Insert your user scriptable text here</div></div><div id="iwnwf" class="gjs-cell"></div></div><script>var props = {"ihxg":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }
+          var props = {"i6s6d":{"userscript":"","userscriptHelpers":""},"i5boq":{"userscript":"","userscriptHelpers":""},"injqx":{"userscript":"","userscriptHelpers":""},"iyhkp":{"userscript":"","userscriptHelpers":""},"iz9ba":{"userscript":"","userscriptHelpers":""},"izeu8":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }
+          var items = document.querySelectorAll('#ilz2f');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+$(this).slider();
+            if (document.getElementById("wrapper")) {
+            }
+}.bind(items[i]))();
+          }
+          var props = {"ifwy1":{"myprop1":"value1","myprop2":"10","userscript":"function click() {\n    alert(\"hi lisa from Minxy and Andy\")\n}\n\n// jfdsfjhfjkash","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('click', click) } catch (ReferenceError) { }\n\n","jqui_label":"HELLO LISA","jqui_showLabel":true,"jqui_icon":"ui-icon-arrowreturnthick-1-e","jqui_iconPosition":"top","jqui_disabled":false}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        $(this).button({
+          classes: {
+            "ui-button": "highlight"
+          },
+          label: props["jqui_label"],
+          showLabel: props["jqui_showLabel"],
+          icon: props["jqui_icon"],
+          iconPosition: props["jqui_iconPosition"],
+          disabled: props["jqui_disabled"]
+        });
+        if (document.getElementById("wrapper")) {
+          $(this).eventPause();
+        }
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#irfb{padding:10px;}#ihxg{color:#d983a6;height:51px;font-family:Courier New, Courier, monospace;font-size:41px;border-radius:5px;border:10px dashed rgb(217, 131, 166);}.gjs-row{display:table;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;width:100%;}.gjs-cell{width:8%;display:table-cell;height:75px;}#injqx{padding:10px;}#iyhkp{padding:10px;}#izeu8{padding:10px;}#iz9ba{padding:10px;font-size:23px;color:#21af35;font-weight:900;}@media (max-width: 992px){#ifwy1{width:270.39099999999996px;height:99.7812px;}}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}@media (max-width: 480px){#i6s6d{padding:10px;}#i5boq{padding:10px;}}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>

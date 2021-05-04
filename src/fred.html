@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export  -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+
+    <title>fred (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/meta.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/pages/fred.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/pages/fred.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+
+<!-- page HEAD stuff here -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="i043xxxx">Insert your text here IMMMMMMMMM</div><button name="default-name" placeholder="Insert text here" fred="FRED" class="cls cls2">my content via block</button><button name="default-name" placeholder="Insert text here" fred="FRED" class="cls cls2">my content via block</button><div class="gjs-row" id="ipmsk"><div class="gjs-cell"><a href="Houston-Ph.D" title="Nav to Houston-Ph.D" id="i0iwh"><span id="ilntg">Houston-Ph.D</span></a></div><div class="gjs-cell"><a id="ixmmh" href="Ottoman-Erskine">Navigate to Ottoman-Erskine</a></div></div><div id="ih7ji" class="gjs-row"><div class="gjs-cell" id="icdc"><textarea name="out" title="this is the title of the textarea" id="i405" class="cls cls2 expand zxc">this is the initial content of the textarea - Hello ANDY</textarea></div><div id="ia4n" class="gjs-cell"><img id="i0yj" src="https://cdn.pixabay.com/photo/2020/12/10/08/44/mountains-5819651_1280.jpg"/></div></div><a id="il12d" href="McAdams-Forsythe" title="Nav to McAdams-Forsythe"><span id="inlz4">McAdams-Forsythe</span></a><script>var props = {"i0iwh":{"userscript":"","userscriptHelpers":""},"ixmmh":{"userscript":"","userscriptHelpers":""},"il12d":{"userscript":"","userscriptHelpers":""}};
+          //let andy_jsGenerator_build_1;
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function (props) {
+    if (props['userscript'] && (!document.getElementById("wrapper"))) // run mode
+      eval(`(function(){\n${props['userscript']}\n${props['userscriptHelpers']}\n}).bind(this)()`)
+  }.bind(el))(props[el.id]);
+          }
+          var items = document.querySelectorAll('#i405');
+          //let andy_jsGenerator_build_2_deprecated;
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+// passing in props causes error?
+        this.addEventListener('scrollBottom', function () {
+            this.scrollTop = this.scrollHeight
+        })
+}.bind(items[i]))();
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}.gjs-row{display:table;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;width:100%;}.gjs-cell{width:8%;display:table-cell;height:75px;}.cls.cls2.expand.zxc{width:421px;height:92px;}#i0yj{color:black;width:139px;height:208.562px;}#il12d{color:#d983a6;}#inlz4{color:rgb(221, 221, 221);font-family:"Courier New", Courier, monospace;text-align:center;background-color:rgb(68, 68, 68);}#ilntg{color:rgb(221, 221, 221);font-family:"Courier New", Courier, monospace;text-align:center;background-color:rgb(68, 68, 68);}#i0iwh{color:#d983a6;}#ixmmh{color:#d983a6;}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>

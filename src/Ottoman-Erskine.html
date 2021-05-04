@@ -1,0 +1,134 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export  -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
+
+    <title>Ottoman-Erskine (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://127.0.0.1:5000/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/meta.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/pages/Ottoman-Erskine.css">
+    <script src="http://localhost:9000/andy.toolbackfs.devel/storage/org/user1/projects/Lisas-Website/pages/Ottoman-Erskine.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+
+<!-- page HEAD stuff here -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="ind1">Welcome to my website ONE AND ALL</div><div id="i043xxxx">Insert your text here IMMMMMMMMM</div><a id="iyga6" href="Houston-Ph.D">navigate to Houston-Ph.D<br/><br/></a><a href="Seth-Signor" id="idj3x">go to Seth-Signor<br/></a><button name="default-name" placeholder="Insert text here" fred="FRED6 0 6 1 " class="cls cls2">my content via block</button><button name="default-name" placeholder="Insert text here" fred="FRED" class="cls cls2">my content via block</button><button name="default-name" placeholder="Insert text here" fred="FRED" class="cls cls2">my content via block</button><div id="i1mh">Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here<div>Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</div><div><br/></div><div><br/></div><div>Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</div><div>Insert your text here</div><div><br/></div></div><div id="ihyku">Insert your text hereInsert your text <b>hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</b><div><b>Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</b></div><div><br/></div><div><br/></div><div>Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</div><div>Insert your text here</div><div><br/></div></div><div id="id8le">Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here<div>Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</div><div><br/></div><div><br/></div><div>Insert your text hereInsert your text hereInsert your text hereInsert your text hereInsert your text here</div><div>Insert your text here</div><div><br/></div></div><script>var items = document.querySelectorAll('#i043xxxx');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+function run(e) {
+    console.log('RUN mode')
+}
+function design(e) {
+    console.log('design mode')
+}
+function click() {
+    console.log('click says hello') 
+}
+function mousemove(e) {
+    console.log('xx', e.target.tagName, e.target.id)
+}
+
+//~~toolback post
+let el = this
+console.log('preparing scripts found in', el.tagName, el.id)
+try { el.addEventListener('run', run) } catch (ReferenceError) { }
+try { el.addEventListener('design', design) } catch (ReferenceError) { }
+try { el.addEventListener('click', click) } catch (ReferenceError) { }
+try { el.addEventListener('mousemove', mousemove) } catch (ReferenceError) { }
+
+
+}.bind(items[i]))();
+          }
+          var props = {"iyga6":{"userscript":"","userscriptHelpers":""},"idj3x":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}.cls.cls2{height:110px;width:151.234px;}#ind1{padding:10px;font-size:29px;color:#2c9a4d;}#i1mh{padding:10px;}#id8le{padding:10px;}#ihyku{padding:10px;}#iyga6{color:#d983a6;height:32auto;font-size:21px;}#idj3x{color:#d983a6;height:32auto;font-size:21px;}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>
