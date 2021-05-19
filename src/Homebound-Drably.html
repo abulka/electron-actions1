@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export and added font-src for F4 mode to stop warning -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+        img-src * 'self' data: https:; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+        font-src * 'self' data:;
+        style-src  'self' 'unsafe-inline' *">
+
+    <title>Homebound-Drably (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Homebound-Drably.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Homebound-Drably.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- A head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+<!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="i6xzg">Insert your text here</div><div id="ibcn6">Insert your text here</div><div id="ikb1h">Insert your text here55</div><div id="i043xxxx"><b>Insert your text here cool</b></div><div id="izxn">Insert your text here</div><div id="ib09j">Insert your text here</div><div id="icgmn">Insert your text here</div><div id="iwt3">Insert your text here</div><div id="iy8g">fred</div><div id="ir8o">Insert your text here</div>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#i043xxxx{width:416px;left:223px;top:505px;position:absolute;height:18px;}#ir8o{padding:10px;left:165px;top:794px;position:absolute;transform: translateX(22.8828125px) translateY(-60px);}#iy8g{padding:10px;left:126px;top:591px;position:absolute;transform: translateX(16.1171875px) translateY(-20px);}#iwt3{padding:10px;left:550px;top:609px;position:absolute;transform: translateX(-28px) translateY(-38px);}#izxn{padding:10px;left:24px;top:257px;position:absolute;width:854px;height:38px;transform: translateX(-20px) translateY(25px);border:solid #64a686;border-radius:23px;}#i6xzg{padding:10px;}#ikb1h{padding:10px;}#icgmn{padding:10px;left:27px;top:432px;position:absolute;width:854px;height:38px;transform: translateX(-4px) translateY(-2px);}#ib09j{padding:10px;left:114px;top:341px;position:absolute;width:854px;height:38px;transform: translateX(-91px) translateY(13px);}#ibcn6{padding:10px;}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>

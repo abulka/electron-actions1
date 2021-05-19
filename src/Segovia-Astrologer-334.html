@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export and added font-src for F4 mode to stop warning -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+        img-src * 'self' data: https:; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+        font-src * 'self' data:;
+        style-src  'self' 'unsafe-inline' *">
+
+    <title>Segovia-Astrologer-334 (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Segovia-Astrologer-334.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Segovia-Astrologer-334.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- A head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+<!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="ic3l9"></div><div id="ip91"></div><div id="izh9x">Insert your text here</div><div id="i8da">Insert your text here</div><div id="iatdn">Insert your text here</div><div id="i8hy1" class="gjs-row"><div id="ickax" class="gjs-cell"><div id="ibbwp">Insert your text here</div><button id="izj64"><span class="ui-button-icon ui-icon ui-icon-gear"></span><span class="ui-button-icon-space"> </span>Click this AA</button><div id="itiq4">Insert your text here</div><div id="ipfbj">AAAAAAAA</div></div><div id="iiqjx" class="gjs-cell"><div id="idopg">Insert your text here dsaasdas</div><div id="ihss">Insert your text here</div><div id="ibu73">Insert your text here</div><div id="i48uq"></div><div id="i0xxr">Insert your text here</div></div></div><div id="ithlj"><text>Hi I am a text block, absolutely positioned</text></div><div id="iabix"><text>Hi I am a text block, absolutely positioned</text></div><div id="i4asb"><text>Hi I am a text block, absolutely positioned. I may initially appear on the canvas in the flow, but you can reposition me absolutely thereafter, without having to turn on absolute positioning mode.</text></div><div id="i2rce"><text>Hi I am a text block, absolutely positioned. I may initially appear on the canvas in the flow, but you can reposition me absolutely thereafter, without having to turn on absolute positioning mode.</text></div><div id="ipy9h"><text>Hi I am a text block, absolutely positioned. I may initially appear on the canvas in the flow, but you can reposition me absolutely thereafter, without having to turn on absolute positioning mode.</text></div><div id="is97h" class="gjs-row"><div id="ilwih" class="gjs-cell"></div><div id="ihzuj" class="gjs-cell"><div id="iwdn6">Insert your text here</div></div></div><script>var items = document.querySelectorAll('#ic3l9, #ip91, #i48uq');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+this.innerHTML = '<p class="no-top-margin-andy">hello <b>this</b> is some inner content<p>';
+      this.onclick = function() {
+        console.log("red box - RUNTIME <---***** and DESIGN time click!");
+      };
+}.bind(items[i]))();
+          }
+          var props = {"izj64":{"myprop1":"value1","myprop2":"10","userscript":"","userscriptHelpers":"","jqui_label":"Click this button","jqui_showLabel":true,"jqui_icon":"ui-icon-gear","jqui_iconPosition":"beginning","jqui_disabled":false}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        $(this).button({
+          classes: {
+            "ui-button": "highlight"
+          },
+          label: props["jqui_label"],
+          showLabel: props["jqui_showLabel"],
+          icon: props["jqui_icon"],
+          iconPosition: props["jqui_iconPosition"],
+          disabled: props["jqui_disabled"]
+        });
+        if (document.getElementById("wrapper")) {
+          $(this).eventPause();
+        }
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#ihss{padding:10px;}#i8da{padding:10px;left:29px;top:977px;position:absolute;width:209px;height:38px;}#ip91{width:144px;height:100px;background:red;margin-left:5px;left:703.5px;top:881px;position:absolute;transform: translateX(-258px) translateY(22px);}#ic3l9{width:69px;height:280px;background:red;margin-left:5px;left:-8.5px;top:519px;position:absolute;transform: translateX(16px) translateY(0px);}.gjs-row{display:table;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;width:100%;}.gjs-cell{width:8%;display:table-cell;height:75px;}#iatdn{padding:10px;transform: translateX(-6px) translateY(253px);left:58px;top:774px;position:absolute;width:601px;height:38px;}#izh9x{padding:10px;transform: translateX(0px) translateY(350px);left:228.5px;top:746px;position:absolute;width:222px;height:158px;}#ithlj{left:29px;top:894px;position:absolute;width:396px;height:18px;}#iabix{left:29px;top:925px;position:absolute;width:312px;height:18px;}#i4asb{left:164.5px;top:602px;position:absolute;width:452px;height:54px;}#ipy9h{left:94.5px;top:771px;position:absolute;width:458px;height:82px;}#i48uq{width:100px;height:100px;background:red;margin-left:5px;}#i0xxr{padding:10px;}#ibu73{padding:10px;left:569px;top:750px;position:absolute;width:254px;height:94px;background-color:#fbff00;}#idopg{padding:10px;}#ipfbj{left:351.5px;top:487px;position:absolute;width:361px;height:18px;}#itiq4{padding:10px;}#is97h{left:59px;top:270.5px;position:absolute;width:644px;height:164px;}#ibbwp{background-color:#c07777;}#iwdn6{padding:10px;}#izj64{position:absolute;top:528.609375px;left:377px;}#i2rce{left:164.5px;top:670px;position:absolute;width:452px;height:54px;background-color:#68c293;}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>

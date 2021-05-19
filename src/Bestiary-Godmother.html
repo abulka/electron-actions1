@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export and added font-src for F4 mode to stop warning -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+        img-src * 'self' data: https:; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+        font-src * 'self' data:;
+        style-src  'self' 'unsafe-inline' *">
+
+    <title>Bestiary-Godmother (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Bestiary-Godmother.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Bestiary-Godmother.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- A head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+<!-- AAB head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div class="gjs-row"><div class="gjs-cell" id="ix0dp"><div id="ihlzm">Back to</div><a id="i5vag" href="Brittany-Weller-835?project=andy1">HOME</a></div></div><div id="i043xxxx">twe have fomantic includes of CSS and JS in the page head.html plus the html components are entered via raw html (custom code components) - not built in components - though I could build proper fomantic drag and drop components one day.</div><div data-html-code2="" id="ihp8t"><div class="ui raised very padded text container segment"><h2 id="ixsgw" class="ui header">this fomantic code will be activated on F3</h2><p>
+    </p><p>
+    </p></div></div><div id="i9te"><div class="ui four column doubling stackable grid container"><div class="column"><p id="ibfy">and this will too!</p><p>
+      this is a test
+    </p></div><div class="column"><p>
+      another column
+    </p><p>
+      another column here too
+    </p></div><div class="column"><p>
+      gosh
+    </p><p>
+    </p></div><div class="column"><p>
+      gosh again
+    </p><p>
+    </p></div><div id="ig2fs">this is a test of a button running some page script code</div><button id="id2s"><span class="ui-button-icon ui-icon ui-icon-gear"></span><span class="ui-button-icon-space"> </span>Click this button</button></div></div><textarea name="out" title="this is the title of the textarea" id="id8nq" class="cls cls2 expand">just a text node more and even more</textarea><script>var props = {"i5vag":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function () {
+                ${props["userscript"]}
+                ${props["userscriptHelpers"]}
+            }).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }
+          var props = {"id2s":{"myprop1":"value1","myprop2":"10","userscript":"function click() {\n    console.log('click says hello') \n    let tarea = document.querySelector('[name=\"out\"]')\n    for (let i in [...Array(50).keys()])\n      tarea.value += Math.random()\n    tarea.value += '\\n-------------\\n\\n'\n    tarea.dispatchEvent(new Event('scrollBottom'));\n\n    let tareas = document.querySelectorAll('[name=\"out\"]')\n    tareas.forEach((tarea) => {\n      tarea.value += 'XX\\n....\\n\\n'\n      tarea.dispatchEvent(new Event('scrollBottom'));\n    })\n}\nfunction mousemove(e) {\n    console.log('xx', e.target.tagName, e.target.id)\n}\n","userscriptHelpers":"//~~toolback helper script\nlet _el = this\n// console.log('preparing scripts found in', _el.tagName, _el.id)\ntry { _el.addEventListener('click', click) } catch (ReferenceError) { }\ntry { _el.addEventListener('mousemove', mousemove) } catch (ReferenceError) { }\n\n","jqui_label":"Click this button to generate content below","jqui_showLabel":true,"jqui_icon":"ui-icon-print","jqui_iconPosition":"beginning","jqui_disabled":false}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        $(this).button({
+          classes: {
+            "ui-button": "highlight"
+          },
+          label: props["jqui_label"],
+          showLabel: props["jqui_showLabel"],
+          icon: props["jqui_icon"],
+          iconPosition: props["jqui_iconPosition"],
+          disabled: props["jqui_disabled"]
+        });
+        if (document.getElementById("wrapper")) {
+          $(this).eventPause();
+        }
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function(){
+${props["userscript"]}
+${props["userscriptHelpers"]}
+}).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }
+          var items = document.querySelectorAll('#id8nq');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+this.addEventListener("scrollBottom", function() {
+        this.scrollTop = this.scrollHeight;
+      });
+}.bind(items[i]))();
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#i043xxxx{color:#1e3604;background-color:#84e2f7;}#ig2fs{color:#1e3604;background-color:#84e2f7;}.gjs-row{display:table;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;width:100%;}.gjs-cell{width:8%;display:table-cell;height:75px;}#ihlzm{padding:10px;}#i5vag{color:#d983a6;}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>

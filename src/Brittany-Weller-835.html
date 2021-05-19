@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export and added font-src for F4 mode to stop warning -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+        img-src * 'self' data: https:; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+        font-src * 'self' data:;
+        style-src  'self' 'unsafe-inline' *">
+
+    <title>Brittany-Weller-835 (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Brittany-Weller-835.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1-405/pages/Brittany-Weller-835.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- A head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+<!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div class="gjs-row"><div class="gjs-cell" id="ixsl"><div id="i6eo">Some Demos</div></div><div class="gjs-cell"></div><div class="gjs-cell" id="i5n7z"><div id="i9g5"></div></div></div><div id="ik5tj" class="gjs-row"><div id="if3zd" class="gjs-cell"><a id="i20dj" href="Mouth-Collectible?project=andy1">orgchart demo</a></div><div id="ijndw" class="gjs-cell"></div></div><div class="gjs-row"><div class="gjs-cell" id="i8fxk"><a href="Hobbes-Bookie?project=andy1" id="irbfk">3d graph demo</a></div></div><div class="gjs-row"><div id="i4cm1" class="gjs-cell"><a id="innkk" href="Bestiary-Godmother?project=andy1">Fomantic demo</a></div></div><div id="i2m6i">Misc stuff here...</div><div class="gjs-row"><div class="gjs-cell"><div id="iz3c"><pre id="i18hj"><span id="iis8x">assert </span><span id="iqeoi">user</span>assert <span id="ixueg">user</span>assert <span id="izx47">user</span>assert <span id="i8lrh">user</span></pre><pre id="iwed3"><pre id="im5ny"><span id="ikp2z">assert </span><span id="i4a9k">user</span>assert <span id="iylus">user</span>assert <span id="iqeck">user</span></pre><pre id="i46nl"><span id="iqy5q">assert </span><span id="iifg7">user</span>assert <span id="iy4ur">user</span>assert <span id="io2mi">user</span></pre></pre></div></div></div><script>var items = document.querySelectorAll('#i9g5');
+          for (var i = 0, len = items.length; i < len; i++) {
+            (function(){
+this.innerHTML = '<p class="no-top-margin-andy">hello <b>this</b> is some inner content<p>';
+      this.onclick = function() {
+        console.log("red box - RUNTIME <---***** and DESIGN time click!");
+      };
+}.bind(items[i]))();
+          }
+          var props = {"i20dj":{"userscript":"","userscriptHelpers":""},"irbfk":{"userscript":"","userscriptHelpers":""},"innkk":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function () {
+                ${props["userscript"]}
+                ${props["userscriptHelpers"]}
+            }).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}.gjs-row{display:table;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;width:100%;}.gjs-cell{width:8%;display:table-cell;height:75px;}#i6eo{padding:10px;font-size:120px;background-color:#beffc2;}#iz3c{padding:10px;text-align:center;font-size:36px;background-color:#c1d6d1;}#i9g5{width:100px;height:100px;background:red;margin-left:5px;}#i18hj{background-color:#1e1e1e;color:#d4d4d4;font-family:'Menlo-Regular',monospace;font-size:12.0pt;}#iis8x{color:#499cd5;}#iqeoi{color:#dcdcaa;}#ixueg{font-size:12pt;color:rgb(220, 220, 170);}#izx47{font-size:12pt;color:rgb(220, 220, 170);}#i8lrh{font-size:12pt;color:rgb(220, 220, 170);}#iwed3{background-color:#1e1e1e;color:#d4d4d4;font-family:'Menlo-Regular',monospace;font-size:12.0pt;}#im5ny{font-family:Menlo-Regular, monospace;font-size:12pt;}#ikp2z{color:#499cd5;}#i4a9k{color:#dcdcaa;}#iylus{font-size:12pt;color:rgb(220, 220, 170);}#iqeck{font-size:12pt;color:rgb(220, 220, 170);}#i46nl{font-family:Menlo-Regular, monospace;font-size:12pt;}#iqy5q{color:#499cd5;}#iifg7{color:#dcdcaa;}#iy4ur{font-size:12pt;color:rgb(220, 220, 170);}#io2mi{font-size:12pt;color:rgb(220, 220, 170);}#i20dj{color:#d983a6;}#irbfk{color:#d983a6;}#innkk{color:#d983a6;}#i2m6i{padding:10px;font-size:45px;}@media (max-width: 768px){.gjs-cell{width:100%;display:block;}}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>
