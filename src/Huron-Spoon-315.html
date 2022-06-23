@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- for electron export and added font-src for F4 mode to stop warning -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+        img-src * 'self' data: https:; 
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+        font-src * 'self' data:;
+        style-src  'self' 'unsafe-inline' *">
+
+    <title>Huron-Spoon-315 (via flask) output</title>
+
+    <!-- for new window / TAB export - should make it standalone or cdn, but this is ok for now -->
+    <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.css">
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/external/jquery/jquery.js"></script>
+    <script src="http://toolback-staging.herokuapp.com/static/js-vendor/jquery-ui-1.12.1.user/jquery-ui.min.js"></script>
+
+    
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1heroku/meta.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1heroku/meta.js"></script>
+    
+
+    <link rel="stylesheet" href="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1heroku/pages/Huron-Spoon-315.css">
+    <script src="https://s3-ap-southeast-2.amazonaws.com/andy.toolbackfs.prod/storage/org/abulka@gmail.com/projects/andy1heroku/pages/Huron-Spoon-315.js"></script>
+
+    <!-- Embed contents of 'css/toolback-out.css' - should href instead, since other files are href -->
+    <!-- <link rel="stylesheet" href="http://toolback-staging.herokuapp.com/static/css/toolback-out.css"> -->
+    <style>
+        body,
+html {
+    margin: 4px;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(205, 253, 192);
+}
+
+.zxc {
+    /* width: -webkit-fill-available; */
+    background-color: aqua;
+    border-width: 5px;
+    border-style: dotted;
+}
+
+.expand {
+    /* fit parent width/height - for when using the default 'display:table' 'display:table-cell' layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: false */
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+.expandflex {
+    /* fit parent width/height - for when using flex layout containers via pluginsOpts: { "gjs-blocks-basic": { flexGrid: true */
+    height: 100%;
+    width: 100%;
+}
+
+    </style>
+
+    <!-- Embed HTML HEAD FRAGMENTS from page (and possibly project, for project pages) -->
+    <!-- This MUST be embedded since it is not js or css, but is extra head html that cannot have a href to -->
+    <!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+<!-- head html goes here, only use for 3rd party script and css includes 
+ and potentially for some script and css to support them.  -->
+
+    <!-- END INJECTED HTML HEAD FRAGMENTS -->
+
+</head>
+
+<body>   
+    <script>
+        //console.log('exported: html being loaded...')
+    </script>
+   
+    <div id="i043xxxx">this is some HEROKU</div><div id="i9p4v">this is some template</div><div id="isfql">this is some template</div><div id="ikv66">this is some template</div><div id="i9eym">this is some template</div><div id="ippr">this is some template</div><a id="izbho" href="Smutty-Algebraic?project=andy1heroku">Link</a><div id="ixwk">this is some template</div><div id="ivmo">this is some CROWN</div><script>var props = {"izbho":{"userscript":"","userscriptHelpers":""}};
+          var ids = Object.keys(props).map(function(id) { return '#'+id }).join(',');
+          var els = document.querySelectorAll(ids);
+          for (var i = 0, len = els.length; i < len; i++) {
+            var el = els[i];
+            (function(props) {
+        if (props["userscript"] && !document.getElementById("wrapper"))
+          eval(`(function () {
+                ${props["userscript"]}
+                ${props["userscriptHelpers"]}
+            }).bind(this)()`);
+      }.bind(el))(props[el.id]);
+          }</script>
+
+    <style>
+        * { box-sizing: border-box; } body {margin: 0;}#i043xxxx{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#ivmo{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#ixwk{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#ippr{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#i9eym{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#ikv66{font-size:88px;font-family:Impact, Charcoal, sans-serif;color:#dd5050;}#isfql{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#i9p4v{font-size:67px;font-family:Impact, Charcoal, sans-serif;}#izbho{color:#d983a6;font-size:127px;}
+    </style>
+
+    <script>
+
+        // from out-template.html
+        let _els = document.querySelectorAll('button,textarea,input,div')
+        //console.log('exported: fully loaded now! output els are', [..._els].map(el => `${el.tagName} ${el.id}`))
+        _els.forEach(el => el.dispatchEvent(new Event('run')))  // els is part of grapesjs so use _els which is mine
+
+    </script>
+</body>
+
+</html>
